@@ -1,0 +1,9 @@
+src/**
+work/**
+node_modules/**
+outputs/**
+.gitignore
+.DS_Store
+tsconfig.json
+**/*.map
+**/tsconfig.tsbuildinfo

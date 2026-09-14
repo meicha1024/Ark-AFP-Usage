@@ -1,0 +1,156 @@
+{
+  "name": "volcengine-ark-afp-usage",
+  "displayName": "火山方舟 AFP 用量",
+  "description": "在 VS Code 状态栏查看火山方舟 Agent Plan 个人版/企业版 AFP 套餐用量。",
+  "version": "0.1.0",
+  "publisher": "meicha",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "volcengine",
+    "火山引擎",
+    "火山方舟",
+    "Agent Plan",
+    "AFP",
+    "usage",
+    "quota"
+  ],
+  "extensionKind": [
+    "ui"
+  ],
+  "galleryBanner": {
+    "color": "#1664FF",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "volcArkAfp.refresh",
+        "title": "火山方舟 AFP: 刷新用量"
+      },
+      {
+        "command": "volcArkAfp.showUsage",
+        "title": "火山方舟 AFP: 查看用量详情"
+      },
+      {
+        "command": "volcArkAfp.configure",
+        "title": "火山方舟 AFP: 打开插件设置"
+      }
+    ],
+    "configuration": {
+      "title": "火山方舟 AFP 用量",
+      "properties": {
+        "volcArkAfp.accessKeyId": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "火山引擎 Access Key ID。也可使用环境变量 `VOLC_ACCESSKEY` 或 `VOLC_ACCESS_KEY_ID`。获取地址：[Access Key 管理](https://console.volcengine.com/iam/keymanage)。",
+          "scope": "machine"
+        },
+        "volcArkAfp.secretAccessKey": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "火山引擎 Secret Access Key。也可使用环境变量 `VOLC_SECRETKEY` 或 `VOLC_SECRET_ACCESS_KEY`。建议写入用户设置，不要提交到项目仓库。",
+          "scope": "machine"
+        },
+        "volcArkAfp.sessionToken": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "可选，临时凭证的 Session Token；长期 AK/SK 留空。也可使用环境变量 `VOLC_SESSION_TOKEN`。",
+          "scope": "machine"
+        },
+        "volcArkAfp.accountType": {
+          "type": "string",
+          "enum": [
+            "personal",
+            "enterprise"
+          ],
+          "enumDescriptions": [
+            "个人版 Agent Plan，调用 GetAFPUsage",
+            "企业版 Agent Plan，调用 GetSeatAFPUsage"
+          ],
+          "default": "personal",
+          "description": "套餐账号类型。"
+        },
+        "volcArkAfp.seatIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "企业版席位 ID 列表。个人版可留空；企业版至少填写一个，最多单次查询 1000 个。"
+        },
+        "volcArkAfp.refreshIntervalMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 60,
+          "description": "自动刷新间隔（分钟）。"
+        },
+        "volcArkAfp.showFiveHour": {
+          "type": "boolean",
+          "default": true,
+          "description": "状态栏是否显示近 5 小时用量。"
+        },
+        "volcArkAfp.showWeekly": {
+          "type": "boolean",
+          "default": true,
+          "description": "状态栏是否显示近 1 周用量。"
+        },
+        "volcArkAfp.showMonthly": {
+          "type": "boolean",
+          "default": true,
+          "description": "状态栏是否显示近 1 月用量。"
+        },
+        "volcArkAfp.warnThresholdPercent": {
+          "type": "number",
+          "default": 70,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "达到该使用率后状态栏图标/提示使用警告色。"
+        },
+        "volcArkAfp.dangerThresholdPercent": {
+          "type": "number",
+          "default": 90,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "达到该使用率后状态栏图标/提示使用严重色。"
+        },
+        "volcArkAfp.endpoint": {
+          "type": "string",
+          "default": "https://ark.cn-beijing.volcengineapi.com",
+          "description": "火山方舟 OpenAPI Endpoint。一般无需修改。"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package --no-dependencies -o outputs/volcengine-ark-afp-usage.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.6.1",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meicha1024/Ark-AFP-Usage.git"
+  },
+  "homepage": "https://github.com/meicha1024/Ark-AFP-Usage#readme",
+  "bugs": {
+    "url": "https://github.com/meicha1024/Ark-AFP-Usage/issues"
+  }
+}

@@ -1,4 +1,4 @@
-# 火山方舟 AFP 用量（VS Code 插件）
+# 火山方舟AFP用量（VS Code 插件）
 
 在 VS Code 状态栏查看火山方舟 **Agent Plan** 套餐的 AFP（Agent Frame Point）额度使用率，支持个人版和企业版席位查询。
 
@@ -40,6 +40,7 @@
 | `volcArkAfp.showMonthly` | 是否显示近 1 月 |
 | `volcArkAfp.warnThresholdPercent` | 警告阈值，默认 70% |
 | `volcArkAfp.dangerThresholdPercent` | 严重阈值，默认 90% |
+| `volcArkAfp.endpoint` | 火山方舟 OpenAPI Endpoint，默认 `https://ark.cn-beijing.volcengineapi.com`，一般无需修改 |
 
 也可以使用环境变量：
 
