@@ -124,9 +124,6 @@ outputs/volcengine-ark-afp-usage.vsix
 - [获取单个/多个席位的 AFP 额度（GetSeatAFPUsage）](https://docs.volcengine.com/docs/82379/2479851?lang=zh)
 - [火山方舟 Base URL 及鉴权](https://docs.volcengine.com/docs/82379/1298459?lang=zh)
 
-## 更新日志
-
-详见随插件附带的 `CHANGELOG.md`（发布到公开仓库后将在此提供在线链接）。
 
 ## 许可证
 
