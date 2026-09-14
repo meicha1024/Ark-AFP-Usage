@@ -1,6 +1,6 @@
 {
   "name": "volcengine-ark-afp-usage",
-  "displayName": "火山方舟 AFP 用量",
+  "displayName": "火山方舟AFP用量",
   "description": "在 VS Code 状态栏查看火山方舟 Agent Plan 个人版/企业版 AFP 套餐用量。",
   "version": "0.1.0",
   "publisher": "meicha",
@@ -48,7 +48,7 @@
       }
     ],
     "configuration": {
-      "title": "火山方舟 AFP 用量",
+      "title": "火山方舟AFP用量",
       "properties": {
         "volcArkAfp.accessKeyId": {
           "type": "string",

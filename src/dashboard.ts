@@ -59,7 +59,7 @@ export class DashboardPanel {
 
         const panel = vscode.window.createWebviewPanel(
             DashboardPanel.viewType,
-            '火山方舟 AFP 用量',
+            '火山方舟AFP用量',
             column,
             {
                 enableScripts: true,
@@ -107,7 +107,7 @@ export class DashboardPanel {
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="${csp}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>火山方舟 AFP 用量</title>
+<title>火山方舟AFP用量</title>
 <style>
 :root {
   --bg: #f5f7fb;

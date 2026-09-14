@@ -1,4 +1,4 @@
-# 火山方舟 AFP 用量 —— VS Code Marketplace 上架清单
+# 火山方舟AFP用量 —— VS Code Marketplace 上架清单
 
 > 当前版本：`0.1.0`　｜　包名：`volcengine-ark-afp-usage`
 > 本文件是发布到 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 的操作手册。

@@ -210,7 +210,7 @@ class AfpUsageExtension {
             this.lastUpdated = new Date();
             this.renderUsage();
             this.updateDashboard();
-            if (notify) void vscode.window.showInformationMessage('火山方舟 AFP 用量已刷新。');
+            if (notify) void vscode.window.showInformationMessage('火山方舟AFP用量已刷新。');
         } catch (error) {
             const message = error instanceof Error ? error.message : String(error);
             this.renderError(message);
