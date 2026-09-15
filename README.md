@@ -2,7 +2,7 @@
 
 在 VS Code 状态栏查看火山方舟 **Agent Plan** 套餐的 AFP（Agent Frame Point）额度使用率，支持个人版和企业版席位查询。
 
-> ⚠️ **非官方社区项目**：本扩展并非火山引擎/字节跳动官方出品，也未与其存在任何隶属、背书或担保关系。“火山引擎”“火山方舟”“Volcengine”等名称及商标归其各自权利人所有，本插件仅用于调用官方公开 OpenAPI 查询本人账号的套餐用量。
+ ⚠️ **非官方社区项目**：本扩展并非火山引擎/字节跳动官方出品，也未与其存在任何隶属、背书或担保关系。“火山引擎”“火山方舟”“Volcengine”等名称及商标归其各自权利人所有，本插件仅用于调用官方公开 OpenAPI 查询本人账号的套餐用量。
 
 
 该插件按照最新管控面 API 实现：
@@ -12,8 +12,6 @@
 - Service：`ark`
 - Region：`cn-beijing`
 - 鉴权：火山引擎 V4 HMAC-SHA256 Access Key 签名
-
-参考插件仍在调用旧的 `GetCodingPlanUsage` / `GetAgentPlanUsage`，而当前文档中的 Agent Plan 用量接口已调整为 `GetAFPUsage` / `GetSeatAFPUsage`，这很可能是其请求失败的原因。
 
 ## 功能
 
@@ -27,7 +25,7 @@
 
 ## 配置
 
-打开 VS Code 设置，搜索 `火山方舟 AFP` 或 `volcArkAfp`：
+打开 VS Code 设置，搜索 `火山方舟AFP用量`：
 
 | 设置 | 说明 |
 | --- | --- |
@@ -96,35 +94,8 @@ VOLC_SESSION_TOKEN=临时 Token
 
 建议不要使用主账号 AK/SK，而是在 IAM 中创建仅具备方舟管控面只读权限的子用户。设置中的密钥是明文存储；如果使用团队共享设备，优先从环境变量注入。
 
-
-## 本地开发
-
-```bash
-npm install
-npm run compile
-```
-
-在 VS Code 中按 `F5` 启动扩展开发宿主。
-
-打包 VSIX：
-
-```bash
-npm run package
-```
-
-生成文件位于：
-
-```text
-outputs/volcengine-ark-afp-usage.vsix
-```
-
 ## 文档依据
 
 - [获取套餐 AFP 额度（GetAFPUsage）](https://docs.volcengine.com/docs/82379/2479847?lang=zh)
 - [获取单个/多个席位的 AFP 额度（GetSeatAFPUsage）](https://docs.volcengine.com/docs/82379/2479851?lang=zh)
 - [火山方舟 Base URL 及鉴权](https://docs.volcengine.com/docs/82379/1298459?lang=zh)
-
-
-## 许可证
-
-MIT（详见随插件附带的 `LICENSE`）
