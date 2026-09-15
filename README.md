@@ -1,4 +1,4 @@
-# 火山方舟AFP用量（VS Code 插件）
+# 火山方舟 AFP 用量（VS Code 插件）
 
 在 VS Code 状态栏查看火山方舟 **Agent Plan** 套餐的 AFP（Agent Frame Point）额度使用率，支持个人版和企业版席位查询。
 

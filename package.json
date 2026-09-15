@@ -1,7 +1,7 @@
 {
   "name": "volcengine-ark-afp-usage",
   "displayName": "火山方舟AFP用量",
-  "description": "在 VS Code 状态栏查看火山方舟 Agent Plan 个人版/企业版 AFP 套餐用量。",
+  "description": "在 VS Code 状态栏查看火山方舟 Agent Plan 套餐的 AFP（Agent Frame Point）额度使用率，支持个人版和企业版席位查询。",
   "version": "0.1.0",
   "publisher": "meicha",
   "license": "MIT",
@@ -66,7 +66,8 @@
           "type": "string",
           "default": "",
           "markdownDescription": "可选，临时凭证的 Session Token；长期 AK/SK 留空。也可使用环境变量 `VOLC_SESSION_TOKEN`。",
-          "scope": "machine"
+          "scope": "machine",
+          "description": "临时凭证 Token，可留空。也可使用环境变量 VOLC_SESSION_TOKEN。"
         },
         "volcArkAfp.accountType": {
           "type": "string",
@@ -75,11 +76,11 @@
             "enterprise"
           ],
           "enumDescriptions": [
-            "个人版 Agent Plan，调用 GetAFPUsage",
-            "企业版 Agent Plan，调用 GetSeatAFPUsage"
+            "个人版 Agent Plan（GetAFPUsage）",
+            "企业版 Agent Plan（GetSeatAFPUsage）"
           ],
           "default": "personal",
-          "description": "套餐账号类型。"
+          "description": "套餐账号类型：personal 个人版，或 enterprise 企业版。"
         },
         "volcArkAfp.seatIds": {
           "type": "array",
@@ -94,41 +95,41 @@
           "default": 5,
           "minimum": 1,
           "maximum": 60,
-          "description": "自动刷新间隔（分钟）。"
+          "description": "自动刷新间隔（分钟），默认 5 分钟。"
         },
         "volcArkAfp.showFiveHour": {
           "type": "boolean",
           "default": true,
-          "description": "状态栏是否显示近 5 小时用量。"
+          "description": "状态栏是否显示近 5 小时用量，默认开启。"
         },
         "volcArkAfp.showWeekly": {
           "type": "boolean",
           "default": true,
-          "description": "状态栏是否显示近 1 周用量。"
+          "description": "状态栏是否显示近 1 周用量，默认开启。"
         },
         "volcArkAfp.showMonthly": {
           "type": "boolean",
           "default": true,
-          "description": "状态栏是否显示近 1 月用量。"
+          "description": "状态栏是否显示近 1 月用量，默认开启。"
         },
         "volcArkAfp.warnThresholdPercent": {
           "type": "number",
           "default": 70,
           "minimum": 0,
           "maximum": 100,
-          "description": "达到该使用率后状态栏图标/提示使用警告色。"
+          "description": "警告阈值（百分比），达到后状态栏使用警告色，默认 70%。"
         },
         "volcArkAfp.dangerThresholdPercent": {
           "type": "number",
           "default": 90,
           "minimum": 0,
           "maximum": 100,
-          "description": "达到该使用率后状态栏图标/提示使用严重色。"
+          "description": "严重阈值（百分比），达到后状态栏使用严重色，默认 90%。"
         },
         "volcArkAfp.endpoint": {
           "type": "string",
           "default": "https://ark.cn-beijing.volcengineapi.com",
-          "description": "火山方舟 OpenAPI Endpoint。一般无需修改。"
+          "description": "火山方舟 OpenAPI Endpoint，默认 https://ark.cn-beijing.volcengineapi.com，一般无需修改。"
         }
       }
     }
