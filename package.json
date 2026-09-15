@@ -2,7 +2,7 @@
   "name": "volcengine-ark-afp-usage",
   "displayName": "火山方舟AFP用量",
   "description": "在 VS Code 状态栏查看火山方舟 Agent Plan 套餐的 AFP（Agent Frame Point）额度使用率，支持个人版和企业版席位查询。",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "meicha",
   "license": "MIT",
   "icon": "media/icon.png",
